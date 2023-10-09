@@ -1,15 +1,30 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 function App() {
   return (
-    <h1>Hello world!</h1>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/about' element={<About />} />
+      </Routes>
+    </BrowserRouter>
+  )
+}
+
+function Home() {
+  return (
+    <h1>Home</h1>
+  )
+}
+
+function About() {
+  return (
+    <h1>About</h1>
   )
 }
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>
+  <App />
 )
